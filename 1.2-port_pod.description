@@ -1,0 +1,60 @@
+Name:         mypod
+Namespace:    ckad-gke-dev-ns
+Priority:     0
+Node:         gk3-ckad-cluster-dev-default-pool-ecca01ac-hqfw/10.128.0.20
+Start Time:   Wed, 13 Oct 2021 10:11:06 -0400
+Labels:       <none>
+Annotations:  autopilot.gke.io/resource-adjustment:
+                {"input":{"containers":[{"name":"mycontainer"}]},"output":{"containers":[{"limits":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"}...
+              seccomp.security.alpha.kubernetes.io/pod: runtime/default
+Status:       Running
+IP:           10.85.128.4
+IPs:
+  IP:  10.85.128.4
+Containers:
+  mycontainer:
+    Container ID:   containerd://61e98f464b9233e442e66c61adb3b1efe0f5540999440e4fbe3b649637785580
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:644a70516a26004c97d0d85c7fe1d0c3a67ea8ab7ddf4aff193d9f301670cf36
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 13 Oct 2021 10:11:08 -0400
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:                500m
+      ephemeral-storage:  1Gi
+      memory:             2Gi
+    Requests:
+      cpu:                500m
+      ephemeral-storage:  1Gi
+      memory:             2Gi
+    Environment:          <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-ggrnn (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-ggrnn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Guaranteed
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From                                   Message
+  ----    ------     ----  ----                                   -------
+  Normal  Scheduled  24s   gke.io/optimize-utilization-scheduler  Successfully assigned ckad-gke-dev-ns/mypod to gk3-ckad-cluster-dev-default-pool-ecca01ac-hqfw
+  Normal  Pulling    23s   kubelet                                Pulling image "nginx:latest"
+  Normal  Pulled     23s   kubelet                                Successfully pulled image "nginx:latest" in 98.273033ms
+  Normal  Created    23s   kubelet                                Created container mycontainer
+  Normal  Started    22s   kubelet                                Started container mycontainer
