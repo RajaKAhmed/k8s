@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: PN1
+  name: pn2
   labels:
     app: peernode
 spec:
   containers:
-  - name: peernodeContainer
+  - name: peernodecontainer
     image: nginx:latest
     resources:
       requests:
